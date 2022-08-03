@@ -14,7 +14,7 @@ export default function ({ developer }: DeveloperProps): React.ReactNode {
    if (process.env.NODE_ENV === 'production') {
       return <>
          <NavBar />
-         <div style={styles.container}>
+         <div style={styles.comingSoon}>
             Coming Soon.
          </div>
       </>;
@@ -34,16 +34,16 @@ export default function ({ developer }: DeveloperProps): React.ReactNode {
 function useStyles(): Record<string, Styling> {
    return {
       container: {
-         maxWidth: '1200px',
-         display: 'flex',
-         flexDirection: 'column',
-         alignItems: 'flex-start',
+         maxWidth: 1200,
          margin: '50px auto 0 auto',
          paddingInline: 24
       },
       image: {
          marginLeft: '20px',
-      }
+      },
+      comingSoon: {
+         marginTop: 25
+      },
    };
 }
 

@@ -1,0 +1,4 @@
+/* I hate geist. */
+.collapsible > div:nth-child(2) > div > div {
+   padding-bottom: 0;
+}

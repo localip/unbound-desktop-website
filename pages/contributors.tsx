@@ -17,7 +17,9 @@ export default function Themes(): React.ReactNode {
       <div style={styles.container}>
          <Text h3>Contributors</Text>
          <Divider />
-         Coming Soon.
+         <span style={styles.comingSoon}>
+            Coming Soon.
+         </span>
       </div>
    </>);
 };
@@ -25,12 +27,12 @@ export default function Themes(): React.ReactNode {
 function useStyles(): Record<string, Styling> {
    return {
       container: {
-         maxWidth: '1200px',
-         display: 'flex',
-         flexDirection: 'column',
-         alignItems: 'flex-start',
+         maxWidth: 1200,
          margin: '50px auto 0 auto',
          paddingInline: 24
+      },
+      comingSoon: {
+         marginTop: 25
       }
    };
 }

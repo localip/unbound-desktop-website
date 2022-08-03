@@ -14,9 +14,13 @@ export default function Home(): React.ReactNode {
                <Text h1>
                   Unleash the chains.
                </Text>
-               <Text p>Exceed limits your discord client has never seen before.</Text>
+               <Text p>
+                  Exceed limits your discord client has never seen before.
+               </Text>
                <div style={styles.heroButtons}>
-                  <Button type='secondary' onClick={() => open('https://codeload.github.com/powercord-org/powercord/zip/refs/heads/v2', '_self')}>Download</Button>
+                  <Button type='secondary' onClick={() => open('/api/download', '_self')}>
+                     Download
+                  </Button>
                   <Button>Learn More</Button>
                </div>
                <Spacer w={5} />

@@ -1,8 +1,10 @@
 import type Addon from '@typings/structures/addon';
 
-import { Text, Collapse, Divider } from '@geist-ui/core';
+import { Text, Collapse, Divider, useTheme, Link } from '@geist-ui/core';
 import NavBar from '@components/partials/navbar';
 import React from 'react';
+
+import Classes from '@styles/faq.module.css';
 
 interface Themes {
    data: Addon[];
@@ -17,8 +19,15 @@ export default function Themes(): React.ReactNode {
       <div style={styles.container}>
          <Text h3>Frequently Asked Questions</Text>
          <Divider />
+         <Text>
+            These are commonly asked questions regarding Unbound itself or any concerns involving Unbound.
+         </Text>
+         <Text b>
+            Please do keep in mind that not all answers will be here.
+         </Text>
          <div style={styles.collapsibles}>
             <Collapse
+               className={Classes.collapsible}
                style={styles.collapse}
                /* @ts-ignore */
                title={<Text h5 margin={0}>
@@ -30,6 +39,7 @@ export default function Themes(): React.ReactNode {
                </Text>
             </Collapse>
             <Collapse
+               className={Classes.collapsible}
                style={styles.collapse}
                /* @ts-ignore */
                title={<Text h5 margin={0}>
@@ -40,20 +50,55 @@ export default function Themes(): React.ReactNode {
                   Discord does not hand out bans for simply using Unbound. If you abuse the service to further violate discord's policies, you risk account suspension.
                </Text>
             </Collapse>
+            <Collapse
+               className={Classes.collapsible}
+               style={styles.collapse}
+               /* @ts-ignore */
+               title={<Text h5 margin={0}>
+                  How does Unbound work?
+               </Text>}
+            >
+               <Text paddingBottom={0}>
+                  Unbound is source-available <Link color href='https://github.com/unbound-mod/unbound'>on GitHub</Link> where you may view all source code.
+               </Text>
+            </Collapse>
+            <Collapse
+               className={Classes.collapsible}
+               style={styles.collapse}
+               /* @ts-ignore */
+               title={<Text h5 margin={0}>
+                  How does I install Unbound?
+               </Text>}
+            >
+               <Text paddingBottom={0}>
+                  Unbound's Installer is available <Link color target='_self' href='/api/download'>here</Link>.
+               </Text>
+            </Collapse>
          </div>
       </div>
    </>);
 };
 
 function useStyles(): Record<string, Styling> {
+   const theme = useTheme();
+
    return {
+      collapse: {
+         border: `1px solid ${theme.palette.accents_2}`,
+         borderRadius: 10,
+         paddingLeft: 20,
+         paddingRight: 20
+      },
       container: {
-         maxWidth: '1200px',
-         display: 'flex',
-         flexDirection: 'column',
-         alignItems: 'flex-start',
+         maxWidth: 1200,
          margin: '50px auto 0 auto',
          paddingInline: 24
+      },
+      collapsibles: {
+         marginTop: 25,
+         display: 'flex',
+         flexDirection: 'column',
+         gap: 8
       }
    };
 }
