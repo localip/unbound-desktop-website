@@ -14,8 +14,10 @@ export default function ({ developer }: DeveloperProps): React.ReactNode {
    if (process.env.NODE_ENV === 'production') {
       return <>
          <NavBar />
-         <div style={styles.comingSoon}>
-            Coming Soon.
+         <div style={styles.container}>
+            <div style={styles.comingSoon}>
+               Coming Soon.
+            </div>
          </div>
       </>;
    }
