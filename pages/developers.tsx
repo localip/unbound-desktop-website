@@ -44,7 +44,7 @@ export default function Developers(): React.ReactNode {
             </div>
          </div>
          <Divider />
-         {devs?.length ? <div style={styles.addonContainer}>
+         {devs?.length ? <div style={styles.developerContainer}>
             {devs.map((dev): React.ReactNode => <DeveloperCard
                developer={dev}
             />)}
@@ -57,7 +57,8 @@ function useStyles(): Record<string, Styling> {
    return {
       container: {
          maxWidth: 1200,
-         margin: '50px auto 0 auto',
+         padding: 50,
+         margin: '0 auto',
          paddingInline: 24
       },
       loading: {
@@ -68,9 +69,10 @@ function useStyles(): Record<string, Styling> {
          maxHeight: '50rem',
          overflow: 'hidden'
       },
-      addonContainer: {
+      developerContainer: {
          marginTop: '20px',
-         gridTemplateColumns: 'repeat(auto-fill, minmax(250px,1fr))',
+         gridTemplateColumns: 'repeat(auto-fill, minmax(17.5rem, 1fr))',
+         justifyItems: 'center',
          display: 'grid',
          gridGap: '20px',
          alignItems: 'stretch'

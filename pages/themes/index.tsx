@@ -38,7 +38,7 @@ export default function Themes(): React.ReactNode {
       <NavBar />
       <div style={styles.container}>
          <div style={styles.header}>
-            <Text h3>Themes</Text>
+            <Text h3 style={styles.title}>Themes</Text>
             <div style={styles.search}>
                <Input
                   value={search}
@@ -67,7 +67,8 @@ function useStyles(): Record<string, Styling> {
    return {
       container: {
          maxWidth: 1200,
-         margin: '50px auto 0 auto',
+         padding: 50,
+         margin: '0 auto',
          paddingInline: 24
       },
       card: {
@@ -77,6 +78,9 @@ function useStyles(): Record<string, Styling> {
       },
       loading: {
          marginTop: '15%'
+      },
+      title: {
+         marginRight: 20
       },
       addonContainer: {
          marginTop: '20px',

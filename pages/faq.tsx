@@ -91,7 +91,8 @@ function useStyles(): Record<string, Styling> {
       },
       container: {
          maxWidth: 1200,
-         margin: '50px auto 0 auto',
+         padding: 50,
+         margin: '0 auto',
          paddingInline: 24
       },
       collapsibles: {

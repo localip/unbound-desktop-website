@@ -17,11 +17,13 @@ export default function Home(): React.ReactNode {
                <Text p>
                   Exceed limits your discord client has never seen before.
                </Text>
-               <div style={styles.heroButtons}>
+               <div className={Classes.buttons} style={styles.heroButtons}>
                   <Button type='secondary' onClick={() => open('/api/download', '_self')}>
                      Download
                   </Button>
-                  <Button>Learn More</Button>
+                  <Button>
+                     Learn More
+                  </Button>
                </div>
                <Spacer w={5} />
             </div>
