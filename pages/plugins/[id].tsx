@@ -36,6 +36,7 @@ export default function Plugin({ addon }: PluginProps): ReactNode {
             items={addon.previews.map((preview, index) => <Image
                style={styles.preview}
                src={preview}
+               /* @ts-ignore */
                alt={index}
                key={index}
                draggable={false}

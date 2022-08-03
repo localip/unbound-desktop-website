@@ -31,7 +31,7 @@ export default function Home(): React.ReactNode {
    </>;
 };
 
-function useStyles() {
+function useStyles(): Record<string, Styling> {
    const theme = useTheme();
 
    return {

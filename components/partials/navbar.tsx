@@ -34,7 +34,7 @@ export default function NavBar() {
          </Tabs>
 
          <div style={styles.buttonContainer}>
-            <Button w={0} style={styles.themer} onClick={() => toggleTheme(!theme)}>
+            <Button w={0} style={styles.themer} onClick={() => toggleTheme(!theme as any)}>
                {theme ?
                   <MoonIcon className={IconStyles.theme} size={14} /> :
                   <SunIcon className={IconStyles.theme} size={14} />
