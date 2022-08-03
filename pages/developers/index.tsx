@@ -32,7 +32,7 @@ export default function Developers(): React.ReactNode {
       <NavBar />
       <div style={styles.container}>
          <div style={styles.header}>
-            <Text h3>Developers</Text>
+            <Text h3 style={styles.title}>Developers</Text>
             <div style={styles.search}>
                <Input
                   value={search}
@@ -63,6 +63,9 @@ function useStyles(): Record<string, Styling> {
       },
       loading: {
          marginTop: '15%'
+      },
+      title: {
+         marginRight: 20
       },
       card: {
          maxWidth: '20rem',
