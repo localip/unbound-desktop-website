@@ -17,8 +17,10 @@ export default function Plugin({ addon }: PluginProps): ReactNode {
    if (process.env.NODE_ENV === 'production') {
       return <>
          <NavBar />
-         <div style={styles.comingSoon}>
-            Coming Soon.
+         <div style={styles.container}>
+            <div style={styles.comingSoon}>
+               Coming Soon.
+            </div>
          </div>
       </>;
    }
