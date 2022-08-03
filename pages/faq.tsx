@@ -21,6 +21,7 @@ export default function Themes(): React.ReactNode {
          <div style={styles.collapsibles}>
             <Collapse
                style={styles.collapse}
+               /* @ts-ignore */
                title={<Text h5 margin={0}>
                   Is this against Terms of Services (ToS)?
                </Text>}
@@ -31,6 +32,7 @@ export default function Themes(): React.ReactNode {
             </Collapse>
             <Collapse
                style={styles.collapse}
+               /* @ts-ignore */
                title={<Text h5 margin={0}>
                   Can Unbound get me banned?
                </Text>}
