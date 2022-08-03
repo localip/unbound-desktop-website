@@ -66,7 +66,9 @@ export default function Plugins(): React.ReactNode {
 function useStyles(): Record<string, CSSProperties> {
    return {
       container: {
-         padding: '50px'
+         maxWidth: 1200,
+         margin: '50px auto 0 auto',
+         paddingInline: 24
       },
       card: {
          maxWidth: '25rem',

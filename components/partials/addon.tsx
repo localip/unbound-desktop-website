@@ -45,7 +45,9 @@ export default function Addon({ addon, refetch, items, type }: AddonProps) {
             </Text>
          </div>
       </div>
-      {addon.description}
+      <div style={styles.description}>
+         {addon.description}
+      </div>
       <div style={styles.footer}>
          {addon.author && <>
             <Avatar src={addon.author.avatar} />
@@ -69,7 +71,7 @@ export default function Addon({ addon, refetch, items, type }: AddonProps) {
             {!items ? 'Unbound Not Open' : isInstalled ? 'Installed' : 'Install'}
          </Button>
       </div>
-   </Card>;
+   </Card >;
 }
 
 function useStyles(): Record<string, CSSProperties> {
@@ -105,6 +107,9 @@ function useStyles(): Record<string, CSSProperties> {
          height: '250px',
          backgroundColor: styles.palette.accents_1,
          objectFit: 'cover'
+      },
+      description: {
+         flexGrow: 1
       },
       footer: {
          marginTop: '10px',

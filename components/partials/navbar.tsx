@@ -1,4 +1,4 @@
-import { Tabs, Select, useTheme } from '@geist-ui/core';
+import { Tabs, Select, useTheme, Button } from '@geist-ui/core';
 import React, { CSSProperties } from 'react';
 import MoonIcon from '@geist-ui/icons/moon';
 import { Unbound } from '@components/icons';
@@ -7,6 +7,7 @@ import { useRouter } from 'next/router';
 import { useApp } from '@hooks';
 
 import IconStyles from '@styles/themer.module.css';
+import { LogIn } from '@geist-ui/icons';
 
 export default function NavBar() {
    const [theme, toggleTheme] = useApp();
@@ -32,29 +33,22 @@ export default function NavBar() {
             <Tabs.Item label='FAQ' value='/faq' />
          </Tabs>
 
-         <Select
-            style={styles.themer}
-            h='28px'
-            scale={0.5}
-            pure={true}
-            title='Switch Themes'
-            value={String(theme)}
-            onChange={v => Number(v) !== theme && toggleTheme()}
-         >
-            <Select.Option value='0'>
-               <span style={styles.themeOption}>
-                  {/* These don't take the styles object for some reason???? */}
-                  <MoonIcon className={IconStyles.theme} size={14} /> Dark
+         <div style={styles.buttonContainer}>
+            <Button w={0} style={styles.themer} onClick={() => toggleTheme(!theme)}>
+               {theme ?
+                  <MoonIcon className={IconStyles.theme} size={14} /> :
+                  <SunIcon className={IconStyles.theme} size={14} />
+               }
+            </Button>
+            <Button w={0.5}>
+               <span style={styles.loginText}>
+                  Login
                </span>
-            </Select.Option>
-            <Select.Option value='1'>
-               <span style={styles.themeOption}>
-                  <SunIcon className={IconStyles.theme} size={14} /> Light
-               </span>
-            </Select.Option>
-         </Select>
-      </div>
-   </nav>;
+               <LogIn size={14} />
+            </Button>
+         </div>
+      </div >
+   </nav >;
 }
 
 function useStyles(): Record<string, CSSProperties> {
@@ -62,6 +56,7 @@ function useStyles(): Record<string, CSSProperties> {
 
    return {
       navbar: {
+         position: 'relative',
          top: 0,
          left: 0,
          right: 0,
@@ -77,17 +72,19 @@ function useStyles(): Record<string, CSSProperties> {
       },
 
       container: {
-         width: '100%',
+         width: '1200px',
          height: '3.5rem',
          display: 'flex',
          alignItems: 'center',
-         margin: '0 15px'
+         margin: '0 auto',
+         paddingInline: 24
       },
 
       themer: {
-         width: '85px',
-         minWidth: '85px',
-         marginLeft: 'auto'
+         marginLeft: 'auto',
+         padding: '0 12.5px',
+         display: 'flex',
+         alignItems: 'center'
       },
 
       tabs: {
@@ -100,6 +97,17 @@ function useStyles(): Record<string, CSSProperties> {
          display: 'flex',
          justifyContent: 'space-between',
          alignItems: 'center'
+      },
+
+      buttonContainer: {
+         marginLeft: 'auto',
+         gap: 12,
+         display: 'flex',
+         flexDirection: 'row'
+      },
+
+      loginText: {
+         marginRight: 7.5
       }
    };
 }

@@ -1,5 +1,5 @@
-import { createContext, useReducer, DispatchWithoutAction } from 'react';
 import { AppContext as AppContextType, Theme } from '@typings/context/app';
+import { createContext } from 'react';
 import { usePersist } from '@hooks';
 
 const ctx: AppContextType = {

@@ -26,6 +26,9 @@
          "@constants": [
             "lib/constants"
          ],
+         "@styles/*": [
+            "styles/*"
+         ],
          "@util": [
             "lib/util"
          ],

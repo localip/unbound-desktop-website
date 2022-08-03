@@ -15,12 +15,14 @@ export default function Carousel({ children, items, ...props }: CarouselProps) {
       slideToPrevItem,
       slideToNextItem
    } = useSpringCarousel({
+      gutter: 24,
+      withLoop: true,
       items: items.map((item: ReactNode, index: number) => ({
          id: index,
          renderItem: <div key={index} style={styles.itemContainer} >
             {item}
          </div>
-      }))
+      })),
    });
 
    return (

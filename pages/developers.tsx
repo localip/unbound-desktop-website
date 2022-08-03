@@ -56,7 +56,9 @@ export default function Developers(): React.ReactNode {
 function useStyles() {
    return {
       container: {
-         padding: '50px'
+         maxWidth: 1200,
+         margin: '50px auto 0 auto',
+         paddingInline: 24
       },
       loading: {
          marginTop: '15%'
@@ -68,7 +70,7 @@ function useStyles() {
       },
       addonContainer: {
          marginTop: '20px',
-         gridTemplateColumns: 'repeat(auto-fill, minmax(300px,1fr))',
+         gridTemplateColumns: 'repeat(auto-fill, minmax(250px,1fr))',
          display: 'grid',
          gridGap: '20px',
          alignItems: 'stretch'

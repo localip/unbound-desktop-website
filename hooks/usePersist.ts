@@ -7,7 +7,7 @@ export default function usePersist(key: string, defaultValue: any) {
    React.useEffect(() => {
       const persist = window.localStorage.getItem(key);
 
-      if (persist !== null) {
+      if (persist) {
          const res = JSON.parse(persist);
          setValue(res);
       }

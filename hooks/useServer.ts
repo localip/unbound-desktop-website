@@ -13,10 +13,10 @@ export default (): [state: Data, refetch: () => void] => {
 
    async function fetchInfo() {
       try {
-         const res = await fetch('http://localhost:5858/info').then(r => r.json());
+         const res = await fetch('http://localhost:9859/info').then(r => r.json());
          setState({ data: res, error: false });
       } catch (error) {
-         console.error('Failed to fetch from discord:', error);
+         console.info('Client not detected.');
          setState({ data: null, error: true });
       }
    }
