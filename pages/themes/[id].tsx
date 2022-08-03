@@ -101,7 +101,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
    const dev = process.env.NODE_ENV !== 'production';
    try {
-      const url = `http${dev ? '' : 's'}://${req.headers.host}/api/plugins/${query.id}`;
+      const url = `http${dev ? '' : 's'}://${req.headers.host}/api/themes/${query.id}`;
       const addon = await fetch(url).then(r => r.json());
 
       return {

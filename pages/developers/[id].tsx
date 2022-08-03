@@ -12,7 +12,15 @@ interface DeveloperProps {
 export default function ({ developer }: DeveloperProps): React.ReactNode {
    const styles = useStyles();
 
-   console.log(developer);
+   if (process.env.NODE_ENV === 'production') {
+      return <>
+         <NavBar />
+         <div style={styles.container}>
+            Coming Soon.
+         </div>
+      </>;
+   }
+
    return <>
       <NavBar />
       <Image
@@ -26,6 +34,14 @@ export default function ({ developer }: DeveloperProps): React.ReactNode {
 
 function useStyles(): Record<string, CSSProperties> {
    return {
+      container: {
+         maxWidth: '1200px',
+         display: 'flex',
+         flexDirection: 'column',
+         alignItems: 'flex-start',
+         margin: '50px auto 0 auto',
+         paddingInline: 24
+      },
       image: {
          marginLeft: '20px',
       }
@@ -40,7 +56,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       'public, s-maxage=60, stale-while-revalidate'
    );
 
-   console.log(query);
    const dev = process.env.NODE_ENV !== 'production';
    try {
       const url = `http${dev ? '' : 's'}://${req.headers.host}/api/developers/${query.id}`;
@@ -52,7 +67,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
          }
       };
    } catch (e) {
-      console.log('monkeys in my backyard');
       return {
          props: {
             developer: null

@@ -28,7 +28,7 @@ export default function NavBar() {
             <Tabs.Item label='Home' value='/' />
             <Tabs.Item label='Plugins' value='/plugins' />
             <Tabs.Item label='Themes' value='/themes' />
-            <Tabs.Item label='Contributors' value='/constributors' />
+            <Tabs.Item label='Contributors' value='/contributors' />
             <Tabs.Item label='Developers' value='/developers' />
             <Tabs.Item label='FAQ' value='/faq' />
          </Tabs>

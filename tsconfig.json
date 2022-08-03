@@ -1,54 +1,54 @@
 {
-   "compilerOptions": {
-      "target": "esnext",
-      "lib": [
-         "dom",
-         "dom.iterable",
-         "esnext"
+  "compilerOptions": {
+    "target": "esnext",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "@components": [
+        "components/index"
       ],
-      "allowJs": true,
-      "skipLibCheck": true,
-      "strict": true,
-      "forceConsistentCasingInFileNames": true,
-      "noEmit": true,
-      "esModuleInterop": true,
-      "module": "esnext",
-      "moduleResolution": "node",
-      "resolveJsonModule": true,
-      "isolatedModules": false,
-      "jsx": "preserve",
-      "incremental": true,
-      "baseUrl": ".",
-      "paths": {
-         "@components": [
-            "components/index"
-         ],
-         "@constants": [
-            "lib/constants"
-         ],
-         "@styles/*": [
-            "styles/*"
-         ],
-         "@util": [
-            "lib/util"
-         ],
-         "@db": [
-            "lib/database"
-         ],
-         "@typings/*": [
-            "types/*"
-         ],
-         "@*": [
-            "./*"
-         ]
-      }
-   },
-   "include": [
-      "next-env.d.ts",
-      "**/*.ts",
-      "**/*.tsx"
-   ],
-   "exclude": [
-      "node_modules"
-   ]
+      "@constants": [
+        "lib/constants"
+      ],
+      "@styles/*": [
+        "styles/*"
+      ],
+      "@util": [
+        "lib/util"
+      ],
+      "@db": [
+        "lib/database"
+      ],
+      "@typings/*": [
+        "types/*"
+      ],
+      "@*": [
+        "./*"
+      ]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
