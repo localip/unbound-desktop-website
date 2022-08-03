@@ -1,8 +1,8 @@
 import type Addon from '@typings/structures/addon';
 
-import { Text, Card, useTheme, Collapse, Divider } from '@geist-ui/core';
+import { Text, Collapse, Divider } from '@geist-ui/core';
 import NavBar from '@components/partials/navbar';
-import React, { CSSProperties } from 'react';
+import React from 'react';
 
 interface Themes {
    data: Addon[];
@@ -17,7 +17,6 @@ export default function Themes(): React.ReactNode {
       <div style={styles.container}>
          <Text h3>Frequently Asked Questions</Text>
          <Divider />
-         {/* <Card style={styles.card}> */}
          <div style={styles.collapsibles}>
             <Collapse
                style={styles.collapse}
@@ -42,14 +41,11 @@ export default function Themes(): React.ReactNode {
                </Text>
             </Collapse>
          </div>
-         {/* </Card> */}
       </div>
    </>);
 };
 
-function useStyles(): Record<string, CSSProperties> {
-   const theme = useTheme();
-
+function useStyles(): Record<string, Styling> {
    return {
       container: {
          maxWidth: '1200px',
@@ -58,15 +54,6 @@ function useStyles(): Record<string, CSSProperties> {
          alignItems: 'flex-start',
          margin: '50px auto 0 auto',
          paddingInline: 24
-      },
-      collapse: {
-         borderTop: 'none'
-      },
-      collapsibles: {
-
-      },
-      card: {
-
       }
    };
 }

@@ -1,9 +1,8 @@
-import Developer from '@typings/structures/developer';
+import type Developer from '@typings/structures/developer';
+import type { GetServerSideProps } from 'next';
 
 import NavBar from '@components/partials/navbar';
-import type { CSSProperties } from 'react';
 import { Image } from '@geist-ui/core';
-import type { GetServerSideProps } from 'next';
 
 interface DeveloperProps {
    developer: Developer;
@@ -32,7 +31,7 @@ export default function ({ developer }: DeveloperProps): React.ReactNode {
    </>;
 };
 
-function useStyles(): Record<string, CSSProperties> {
+function useStyles(): Record<string, Styling> {
    return {
       container: {
          maxWidth: '1200px',

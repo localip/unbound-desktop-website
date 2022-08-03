@@ -3,9 +3,9 @@ import type Addon from '@typings/structures/addon';
 import { Text, Divider, Input, Loading } from '@geist-ui/core';
 import AddonCard from '@components/partials/addon';
 import NavBar from '@components/partials/navbar';
-import React, { CSSProperties } from 'react';
 import { Search } from '@geist-ui/icons';
 import { useServer } from '@hooks';
+import React from 'react';
 
 interface Themes {
    data: Addon[];
@@ -63,7 +63,7 @@ export default function Themes(): React.ReactNode {
    </>);
 };
 
-function useStyles(): Record<string, CSSProperties> {
+function useStyles(): Record<string, Styling> {
    return {
       container: {
          maxWidth: 1200,

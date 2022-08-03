@@ -1,11 +1,11 @@
 import Addon from '@typings/structures/addon';
 
-import { ReactNode, CSSProperties } from 'react';
 import NavBar from '@components/partials/navbar';
+import { Carousel } from '@components/partials';
 import { GetServerSideProps } from 'next';
 import { Frown } from '@geist-ui/icons';
-import { Carousel } from '@components/partials';
 import { Image } from '@geist-ui/core';
+import { ReactNode } from 'react';
 
 interface PluginProps {
    addon: Addon;
@@ -60,7 +60,7 @@ export default function Plugin({ addon }: PluginProps): ReactNode {
    </>;
 };
 
-function useStyles(): Record<string, CSSProperties> {
+function useStyles(): Record<string, Styling> {
    return {
       container: {
          maxWidth: '1200px',

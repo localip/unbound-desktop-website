@@ -1,9 +1,9 @@
-import Developer from '@typings/structures/developer';
+import type Developer from '@typings/structures/developer';
+
 import { Text, Divider, Input, Loading } from '@geist-ui/core';
 import DeveloperCard from '@components/partials/developer';
 import NavBar from '@components/partials/navbar';
 import { Search } from '@geist-ui/icons';
-import { useServer } from '@hooks';
 import React from 'react';
 
 interface Developers {
@@ -53,7 +53,7 @@ export default function Developers(): React.ReactNode {
    </>);
 };
 
-function useStyles() {
+function useStyles(): Record<string, Styling> {
    return {
       container: {
          maxWidth: 1200,
