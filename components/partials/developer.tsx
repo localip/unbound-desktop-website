@@ -38,7 +38,6 @@ function useStyles(): Record<string, CSSProperties> {
 
    return {
       card: {
-         width: '17.5rem',
          overflow: 'hidden',
          padding: 0,
          margin: 0,
@@ -49,8 +48,6 @@ function useStyles(): Record<string, CSSProperties> {
       },
       preview: {
          display: 'flex',
-         width: '17.5rem',
-         height: '17.5rem',
          borderTopRightRadius: 5,
          borderTopLeftRadius: 5,
          backgroundColor: styles.palette.accents_1,

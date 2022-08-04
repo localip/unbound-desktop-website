@@ -52,7 +52,7 @@ export default function Addon({ addon, refetch, items, type }: AddonProps) {
          {addon.author && <>
             <Avatar src={addon.author.avatar} />
             <Spacer w={0.5} />
-            <Link href={`/developers/${addon.author.username}`}>
+            <Link href={`/developers/${addon.author.username}`} style={styles.author}>
                {addon.author.username}
             </Link>
          </>}
@@ -93,8 +93,6 @@ function useStyles(): Record<string, CSSProperties> {
          marginBottom: '10px'
       },
       card: {
-         maxWidth: '25rem',
-         maxHeight: '35rem',
          overflow: 'hidden',
          cursor: 'pointer'
       },
@@ -104,12 +102,16 @@ function useStyles(): Record<string, CSSProperties> {
          color: styles.palette.accents_3,
          display: 'flex',
          justifyContent: 'center',
-         height: '250px',
+         height: '15rem',
          backgroundColor: styles.palette.accents_1,
          objectFit: 'cover'
       },
       description: {
-         flexGrow: 1
+         flexGrow: 1,
+         height: '2rem',
+         textOverflow: 'ellipsis',
+         whiteSpace: 'nowrap',
+         overflow: 'hidden'
       },
       footer: {
          marginTop: '10px',
@@ -118,6 +120,9 @@ function useStyles(): Record<string, CSSProperties> {
       },
       install: {
          marginLeft: 'auto'
+      },
+      author: {
+         paddingRight: 20
       }
    };
 }

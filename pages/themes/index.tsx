@@ -69,7 +69,8 @@ function useStyles(): Record<string, Styling> {
          maxWidth: 1200,
          padding: 50,
          margin: '0 auto',
-         paddingInline: 24
+         paddingInline: 24,
+         overflow: 'hidden'
       },
       card: {
          maxWidth: '25rem',
@@ -84,7 +85,7 @@ function useStyles(): Record<string, Styling> {
       },
       addonContainer: {
          marginTop: '20px',
-         gridTemplateColumns: 'repeat(auto-fill, minmax(300px,1fr))',
+         gridTemplateColumns: 'repeat(auto-fill, minmax(23rem,1fr))',
          display: 'grid',
          gridGap: '20px',
          alignItems: 'stretch'

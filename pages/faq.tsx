@@ -59,7 +59,7 @@ export default function Themes(): React.ReactNode {
                </Text>}
             >
                <Text paddingBottom={0}>
-                  Unbound is source-available <Link color href='https://github.com/unbound-mod/unbound'>on GitHub</Link> where you may view all source code.
+                  Unbound is source-available <Link block color href='https://github.com/unbound-mod/unbound'>on GitHub</Link> where you may view all source code.
                </Text>
             </Collapse>
             <Collapse
@@ -67,11 +67,11 @@ export default function Themes(): React.ReactNode {
                style={styles.collapse}
                /* @ts-ignore */
                title={<Text h5 margin={0}>
-                  How does I install Unbound?
+                  How do I install Unbound?
                </Text>}
             >
                <Text paddingBottom={0}>
-                  Unbound's Installer is available <Link color target='_self' href='/api/download'>here</Link>.
+                  Unbound's Installer is available <Link block color target='_self' href='/api/download'>here</Link>.
                </Text>
             </Collapse>
          </div>
@@ -93,7 +93,8 @@ function useStyles(): Record<string, Styling> {
          maxWidth: 1200,
          padding: 50,
          margin: '0 auto',
-         paddingInline: 24
+         paddingInline: 24,
+         overflow: 'hidden'
       },
       collapsibles: {
          marginTop: 25,

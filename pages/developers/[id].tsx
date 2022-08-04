@@ -39,7 +39,8 @@ function useStyles(): Record<string, Styling> {
          maxWidth: 1200,
          padding: 50,
          margin: '0 auto',
-         paddingInline: 24
+         paddingInline: 24,
+         overflow: 'hidden'
       },
       image: {
          marginLeft: '20px',

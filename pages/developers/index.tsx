@@ -59,7 +59,8 @@ function useStyles(): Record<string, Styling> {
          maxWidth: 1200,
          padding: 50,
          margin: '0 auto',
-         paddingInline: 24
+         paddingInline: 24,
+         overflow: 'hidden'
       },
       loading: {
          marginTop: '15%'
@@ -74,8 +75,7 @@ function useStyles(): Record<string, Styling> {
       },
       developerContainer: {
          marginTop: '20px',
-         gridTemplateColumns: 'repeat(auto-fill, minmax(17.5rem, 1fr))',
-         justifyItems: 'center',
+         gridTemplateColumns: 'repeat(auto-fill, minmax(17.5rem,1fr))',
          display: 'grid',
          gridGap: '20px',
          alignItems: 'stretch'

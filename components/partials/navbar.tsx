@@ -6,7 +6,7 @@ import SunIcon from '@geist-ui/icons/sun';
 import { useRouter } from 'next/router';
 import { useApp } from '@hooks';
 
-import IconStyles from '@styles/themer.module.css';
+import Classes from '@styles/nav.module.css';
 import { LogIn } from '@geist-ui/icons';
 
 export default function NavBar() {
@@ -14,38 +14,40 @@ export default function NavBar() {
    const styles = useStyles();
    const router = useRouter();
 
-   return <nav style={styles.navbar}>
-      <div style={styles.container}>
-         <Unbound width={45} height={45} />
+   return <nav className={Classes.nav} style={styles.navbar}>
+      <div className={Classes.container} style={styles.container}>
+         <Unbound className={Classes.icon} width={45} height={45} />
 
-         <Tabs
-            onChange={v => router.push(v)}
-            style={styles.tabs}
-            initialValue={router.pathname}
-            hideDivider
-            hideBorder
-         >
-            <Tabs.Item label='Home' value='/' />
-            <Tabs.Item label='Plugins' value='/plugins' />
-            <Tabs.Item label='Themes' value='/themes' />
-            <Tabs.Item label='Contributors' value='/contributors' />
-            <Tabs.Item label='Developers' value='/developers' />
-            <Tabs.Item label='FAQ' value='/faq' />
-         </Tabs>
+         <div className={Classes.content}>
+            <Tabs
+               onChange={v => router.push(v)}
+               style={styles.tabs}
+               className={Classes.tabs}
+               initialValue={router.pathname}
+               hideDivider
+               hideBorder
+            >
+               <Tabs.Item label='Home' value='/' />
+               <Tabs.Item label='Plugins' value='/plugins' />
+               <Tabs.Item label='Themes' value='/themes' />
+               <Tabs.Item label='Developers' value='/developers' />
+               <Tabs.Item label='FAQ' value='/faq' />
+            </Tabs>
 
-         <div style={styles.buttonContainer}>
-            <Button w={0} style={styles.themer} onClick={() => toggleTheme(!theme as any)}>
-               {theme ?
-                  <MoonIcon className={IconStyles.theme} size={14} /> :
-                  <SunIcon className={IconStyles.theme} size={14} />
-               }
-            </Button>
-            <Button w={0.5}>
-               <span style={styles.loginText}>
-                  Login
-               </span>
-               <LogIn size={14} />
-            </Button>
+            <div className={Classes.actions} style={styles.buttonContainer}>
+               <Button w={0} style={styles.themer} onClick={() => toggleTheme(!theme as any)}>
+                  {theme ?
+                     <MoonIcon className={Classes.theme} size={14} /> :
+                     <SunIcon className={Classes.theme} size={14} />
+                  }
+               </Button>
+               <Button w={0.5}>
+                  <span style={styles.loginText}>
+                     Login
+                  </span>
+                  <LogIn size={14} />
+               </Button>
+            </div>
          </div>
       </div >
    </nav >;
@@ -60,20 +62,20 @@ function useStyles(): Record<string, CSSProperties> {
          top: 0,
          left: 0,
          right: 0,
-         paddingRight: 0,
+         padding: 0,
          backdropFilter: 'saturate(180%) blur(5px)',
          backgroundColor: styles.palette.background,
          boxShadow: styles.expressiveness.shadowSmall,
          zIndex: 999,
          width: '100%',
-         height: '3.5rem',
+         height: 'auto',
          display: 'flex',
          alignItems: 'center'
       },
 
       container: {
          width: '1200px',
-         height: '3.5rem',
+         height: '100%',
          display: 'flex',
          alignItems: 'center',
          margin: '0 auto',

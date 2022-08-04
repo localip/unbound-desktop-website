@@ -12,7 +12,7 @@ export default function Home(): React.ReactNode {
          <div className={Classes.container} style={styles.container}>
             <div style={styles.heroInfo}>
                <Text h1>
-                  Unleash the chains.
+                  Unleash the chains
                </Text>
                <Text p>
                   Exceed limits your discord client has never seen before.
@@ -51,7 +51,8 @@ function useStyles(): Record<string, Styling> {
          alignItems: 'center',
          minHeight: 'clamp(420px, 75vh, 700px)',
          gap: 12,
-         padding: 48
+         padding: 48,
+         overflow: 'hidden'
       },
       heroInfo: {
          position: 'relative'
