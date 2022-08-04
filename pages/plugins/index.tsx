@@ -85,7 +85,7 @@ function useStyles(): Record<string, Styling> {
       },
       addonContainer: {
          marginTop: '20px',
-         gridTemplateColumns: 'repeat(auto-fill, minmax(23rem,1fr))',
+         gridTemplateColumns: 'repeat(auto-fill, minmax(300px,1fr))',
          display: 'grid',
          gridGap: '20px',
          alignItems: 'stretch'

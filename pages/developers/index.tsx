@@ -75,7 +75,7 @@ function useStyles(): Record<string, Styling> {
       },
       developerContainer: {
          marginTop: '20px',
-         gridTemplateColumns: 'repeat(auto-fill, minmax(17.5rem,1fr))',
+         gridTemplateColumns: 'repeat(auto-fill, minmax(250px,1fr))',
          display: 'grid',
          gridGap: '20px',
          alignItems: 'stretch'
