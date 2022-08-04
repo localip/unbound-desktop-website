@@ -42,17 +42,18 @@ function useStyles(): Record<string, Styling> {
 
    return {
       container: {
+         minHeight: 'clamp(420px, 75vh, 700px)',
          '--dots': theme.palette.accents_2,
-         maxWidth: 1200,
+         justifyContent: 'space-between',
+         position: 'relative',
+         alignItems: 'center',
+         overflow: 'hidden',
+         flexWrap: 'wrap',
          margin: '0 auto',
          display: 'flex',
-         flexWrap: 'wrap',
-         justifyContent: 'space-between',
-         alignItems: 'center',
-         minHeight: 'clamp(420px, 75vh, 700px)',
-         gap: 12,
+         maxWidth: 1200,
          padding: 48,
-         overflow: 'hidden'
+         gap: 12
       },
       heroInfo: {
          position: 'relative'
@@ -63,10 +64,10 @@ function useStyles(): Record<string, Styling> {
          gap: 8
       },
       image: {
-         width: 550,
-         background: theme.palette.accents_1,
          border: `1px solid ${theme.palette.border}`,
-         borderRadius: 8
+         background: theme.palette.accents_1,
+         borderRadius: 8,
+         width: 550
       }
    };
 }
