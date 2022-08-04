@@ -23,7 +23,10 @@ function MyApp({ Component, pageProps }: AppProps) {
             <link rel='manifest' href='/site.webmanifest' />
             <meta name='theme-color' content='#ffffff' />
          </Head>
-         <div id='root' style={{ '--scrollbar-colour': theme.palette.accents_3 } as Record<string, string>}>
+         <div id='root' style={{
+            '--scrollbar-colour': theme.palette.accents_3,
+            '--highlight-colour': theme.palette.link
+         } as Record<string, string>}>
             <Component {...pageProps} />
          </div>
       </Geist>

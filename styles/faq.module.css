@@ -2,3 +2,9 @@
 .collapsible > div:nth-child(2) > div > div {
    padding-bottom: 0;
 }
+
+.collapsible > div[role='button'] {
+   -webkit-user-select: none !important;
+   -moz-user-select: none !important;
+   user-select: none !important;
+}
