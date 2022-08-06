@@ -22,11 +22,15 @@ function MyApp({ Component, pageProps }: AppProps) {
             <meta name='msapplication-TileColor' content='#da532c' />
             <link rel='manifest' href='/site.webmanifest' />
             <meta name='theme-color' content='#ffffff' />
+            <style>
+               {`html {
+                  --scrollbar-colour: ${theme.palette.accents_4};
+                  --scrollbar-colour-hover: ${theme.palette.accents_3};
+                  --highlight-colour: ${theme.palette.link};
+               }`}
+            </style>
          </Head>
-         <div id='root' style={{
-            '--scrollbar-colour': theme.palette.accents_3,
-            '--highlight-colour': theme.palette.link
-         } as Record<string, string>}>
+         <div id='root'>
             <Component {...pageProps} />
          </div>
       </Geist>
