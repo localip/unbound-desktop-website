@@ -52,7 +52,6 @@ export default function Plugin({ addon }: PluginProps): ReactNode {
                key={index}
                draggable={false}
                onError={({ currentTarget }) => {
-                  console.log(currentTarget.src);
                   currentTarget.src = '/assets/package_placeholder.svg';
                }}
             />)}

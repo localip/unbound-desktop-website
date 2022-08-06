@@ -1,5 +1,7 @@
 import type { NextApiResponse } from 'next';
 
+export const DISCORD = 'awnvkjJH5p';
+
 export const DB_COLLECTIONS = [
    'addons',
    'developers',

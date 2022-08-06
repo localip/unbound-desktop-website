@@ -2,13 +2,14 @@ import { Text, Button, Spacer, useTheme } from '@geist-ui/core';
 
 import NavBar from '@components/partials/navbar';
 import Classes from '@styles/main.module.css';
+import * as Constants from '@constants';
 
 export default function Home(): React.ReactNode {
    const styles = useStyles();
 
    return <>
       <NavBar />
-      <section>
+      <section className={Classes.section} style={styles.section}>
          <div className={Classes.container} style={styles.container}>
             <div style={styles.heroInfo}>
                <Text h1>
@@ -21,8 +22,8 @@ export default function Home(): React.ReactNode {
                   <Button type='secondary' onClick={() => open('/api/download', '_self')}>
                      Download
                   </Button>
-                  <Button>
-                     Learn More
+                  <Button onClick={() => open(`https://discord.gg/${Constants.DISCORD}`)}>
+                     Join The Community
                   </Button>
                </div>
                <Spacer w={5} />
@@ -41,9 +42,11 @@ function useStyles(): Record<string, Styling> {
    const theme = useTheme();
 
    return {
+      section: {
+         '--dots': theme.palette.accents_2,
+      },
       container: {
          minHeight: 'clamp(420px, 75vh, 700px)',
-         '--dots': theme.palette.accents_2,
          justifyContent: 'space-between',
          position: 'relative',
          alignItems: 'center',

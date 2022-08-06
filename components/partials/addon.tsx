@@ -68,7 +68,7 @@ export default function Addon({ addon, refetch, items, type }: AddonProps) {
                }
             }}
          >
-            {!items ? 'Unbound Not Open' : isInstalled ? 'Installed' : 'Install'}
+            {!items ? 'Client Not Open' : isInstalled ? 'Installed' : 'Install'}
          </Button>
       </div>
    </Card >;
