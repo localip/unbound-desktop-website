@@ -108,9 +108,10 @@ function useStyles(): Record<string, CSSProperties> {
       },
       description: {
          flexGrow: 1,
-         height: '2rem',
-         textOverflow: 'ellipsis',
-         whiteSpace: 'nowrap',
+         display: '-webkit-box',
+         lineClamp: 2,
+         WebkitBoxOrient: 'vertical',
+         WebkitLineClamp: 2,
          overflow: 'hidden'
       },
       footer: {
